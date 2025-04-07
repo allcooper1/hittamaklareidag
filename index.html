@@ -39,6 +39,55 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Är det verkligen gratis att jämföra mäklare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja! Vår tjänst är helt kostnadsfri – inga dolda avgifter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur snabbt blir jag kontaktad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oftast inom 24 timmar – direktkontakt med lokal expert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur många mäklare får jag jämföra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du får kontakt med 2–4 mäklare som du enkelt kan jämföra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag tacka nej?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du har inga förpliktelser – tjänsten är helt frivillig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka orter täcker ni?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hela Sverige – från storstäder till mindre samhällen."
+      }
+    }
+  ]
+}
+</script>
+
   <style>
     body {
       margin: 0;
@@ -286,6 +335,45 @@
 <div style="text-align:center; margin-top:20px;">
   <a href="artiklar.html">📚 Läs våra artiklar och guider</a>
 </div>
+
+<section class="faq">
+  <h3>Vanliga frågor</h3>
+  <div class="faq-item">
+    <button class="faq-question">Är det verkligen gratis att jämföra mäklare? <span class="arrow">▼</span></button>
+    <div class="faq-answer"><p>Ja! Vår tjänst är helt kostnadsfri – inga dolda avgifter.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Hur snabbt blir jag kontaktad? <span class="arrow">▼</span></button>
+    <div class="faq-answer"><p>Oftast inom 24 timmar – direktkontakt med lokal expert.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Hur många mäklare får jag jämföra? <span class="arrow">▼</span></button>
+    <div class="faq-answer"><p>Du får kontakt med 2–4 mäklare som du enkelt kan jämföra.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Kan jag tacka nej? <span class="arrow">▼</span></button>
+    <div class="faq-answer"><p>Ja, du har inga förpliktelser – tjänsten är helt frivillig.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Vilka orter täcker ni? <span class="arrow">▼</span></button>
+    <div class="faq-answer"><p>Hela Sverige – från storstäder till mindre samhällen.</p></div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+      const arrow = btn.querySelector('.arrow');
+      if (item.classList.contains('active')) {
+        arrow.textContent = '▲';
+      } else {
+        arrow.textContent = '▼';
+      }
+    });
+  });
+</script> 
 
   <div class="footer">
     &copy; 2025 Jämför Mäklare – Alla rättigheter förbehållna
