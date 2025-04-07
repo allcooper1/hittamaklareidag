@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://www.hittamaklareidag.se/</loc>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://www.hittamaklareidag.se/artiklar.html</loc>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://www.hittamaklareidag.se/gratis-bostadsvardering.html</loc>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://www.hittamaklareidag.se/tips-salja-bostad-snabbt.html</loc>
-    <priority>0.80</priority>
-  </url>
-
-</urlset>
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.hittamaklareidag.se/</loc><priority>1.00</priority></url><url><loc>https://www.hittamaklareidag.se/artiklar.html</loc><priority>0.90</priority></url><url><loc>https://www.hittamaklareidag.se/gratis-bostadsvardering.html</loc><priority>0.80</priority></url><url><loc>https://www.hittamaklareidag.se/tips-salja-bostad-snabbt.html</loc><priority>0.80</priority></url><url><loc>https://www.hittamaklareidag.se/fa-bast-betalt-nar-du-saljer.html</loc><lastmod>2025-04-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url></urlset>
