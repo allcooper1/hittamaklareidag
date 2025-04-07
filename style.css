@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #dff0d8;  /* Ljusgrön bakgrund för hela sidan */
+  background-color: #dff0d8 !important; /* Ljusgrön bakgrund */
   color: #333;
   line-height: 1.6;
 }
@@ -16,7 +16,6 @@ header {
   text-align: center;
   color: #fff;
 }
-
 header::after {
   content: "";
   position: absolute;
@@ -26,43 +25,38 @@ header::after {
   height: 100%;
   background: rgba(0,0,0,0.6);
 }
-
-header h1,
-header p {
+header .header-content {
   position: relative;
   z-index: 1;
-  margin: 0;
 }
-
 header h1 {
   font-size: 2.8rem;
   margin-bottom: 20px;
 }
-
 header p {
   font-size: 1.3rem;
 }
 
-/* CONTAINER runt formulär och innehåll */
+/* CONTAINER runt huvudinnehåll (formulär, bonus etc.) */
 .container {
   max-width: 720px;
   margin: 20px auto;
   padding: 2.5rem;
+  background: #fff;      /* Vit bakgrund för formulär/innehåll */
   border-radius: 12px;
-  box-shadow: none; /* Ingen separat skugga om du vill att det ska ”smälta in” */
-  background-color: transparent; /* Transparent så att bakgrundsfärgen (ljusgrön) syns */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 /* RUBRIKER */
 h2 {
-  color: #3c763d;  /* Mörkare grön för rubriker */
+  color: #2c3e50;       /* Neutral, mörkgrå/blå färg */
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 /* BONUS-BOX */
 .bonus-box {
-  background: #c8e5bc;  /* Mediumgrön ton */
+  background: #c8e5bc;   /* Ljusgrön ton */
   border-left: 5px solid #3c763d;
   padding: 15px;
   border-radius: 6px;
@@ -76,17 +70,15 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: #fff; /* Vit bakgrund i själva formuläret för kontrast */
+  background: #fff;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
-
 form label {
   font-weight: 600;
-  color: #3c763d;
+  color: #2c3e50;  /* Neutral färg istället för grön */
 }
-
 form input,
 form select {
   width: 100%;
@@ -97,16 +89,15 @@ form select {
   font-size: 1rem;
   transition: border-color 0.3s;
 }
-
 form input:focus,
 form select:focus {
   border-color: #3c763d;
   outline: none;
 }
 
-/* CTA-KNAPP – större och tydligare */
+/* CTA-KNAPP – MÖRKBLÅ */
 button {
-  background-color: #3c763d;
+  background-color: #1c3f77; /* Mörkblå */
   color: #fff;
   padding: 15px;
   width: 100%;
@@ -116,9 +107,8 @@ button {
   font-size: 1.2rem;
   transition: background-color 0.3s, transform 0.2s;
 }
-
 button:hover {
-  background-color: #2b572e;
+  background-color: #162f5d;
   transform: translateY(-2px);
 }
 
@@ -126,12 +116,11 @@ button:hover {
 .trust-points {
   margin-top: 1rem;
   font-size: 0.95rem;
-  color: #3c763d;
+  color: #2c3e50; /* Ändra textfärg från grön till neutral */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 .trust-points div {
   background: #e6f7e1;
   padding: 0.5rem 1rem;
@@ -141,7 +130,7 @@ button:hover {
 /* SEO-COPY */
 .seo-copy {
   font-size: 0.95rem;
-  color: #3c763d;
+  color: #2c3e50;
   margin-top: 2rem;
   line-height: 1.6;
 }
@@ -153,20 +142,55 @@ button:hover {
   max-width: 1000px;
   padding: 0 1rem;
 }
-
 .how-it-works h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #3c763d;
+  color: #2c3e50;
 }
-
 .steps {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+.step {
+  background: #fff; /* Vit bakgrund för kontrast */
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.2s;
+}
+.step:hover {
+  transform: translateY(-3px);
+}
+.step h4 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
 
-@media(min-width: 768px) {
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+/* LÄNKAR – BLÅ FÄRG FÖR BÄTTRE KONTRAST */
+a {
+  color: #0052cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVA JUSTERINGAR */
+@media (min-width: 768px) {
   .steps {
     flex-direction: row;
     justify-content: space-between;
@@ -179,36 +203,3 @@ button:hover {
   }
 }
 
-.step {
-  background: #dff0d8;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  flex: 1;
-  min-width: 200px;
-}
-
-.step h4 {
-  margin-bottom: 0.5rem;
-  color: #3c763d;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 3rem;
-  color: #3c763d;
-  font-size: 0.9rem;
-  padding: 1rem;
-}
-
-/* LÄNKAR */
-a {
-  color: #3c763d;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
