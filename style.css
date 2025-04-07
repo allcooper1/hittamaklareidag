@@ -1,212 +1,302 @@
-/* Global styling */
-body {
+/* Globala stilar */
+:root {
+  --primary-color: #2a5c8d;
+  --primary-dark: #1e4568;
+  --secondary-color: #f7b733;
+  --accent-color: #4abdac;
+  --light-bg: #f8f9fa;
+  --dark-text: #2c3e50;
+  --light-text: #ecf0f1;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8fafd;
-  color: #333;
   line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--light-bg);
+  overflow-x: hidden;
 }
 
-/* Header med mörk overlay för bättre kontrast */
-header {
-  position: relative;
-  background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-  padding: 60px 20px;
+/* Header */
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  color: var(--light-text);
+  padding: 4rem 1rem;
   text-align: center;
-  color: #fff;
+  position: relative;
 }
 
-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-header h1,
-header p {
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
-  margin: 0;
 }
 
-header h1 {
+.header h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-header p {
-  font-size: 1.2rem;
-}
-
-/* Container för formulär och innehåll */
-.container {
-  background: #fff;
-  max-width: 720px;
-  margin: -40px auto 2rem auto;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Rubriker */
-h2 {
-  color: #1c3f77;
-  font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-/* Bonus-box styling */
-.bonus-box {
-  background: #e8f4ff;
-  border-left: 5px solid #0e76fd;
-  padding: 15px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-/* Formulär styling */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-form label {
-  font-weight: 600;
-  color: #444;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fdfdfd;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-
-form input:focus,
-form select:focus {
-  border-color: #1c3f77;
-  outline: none;
-}
-
-/* Knappar */
-button {
-  background-color: #1c3f77;
-  color: #fff;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-button:hover {
-  background-color: #162f5d;
-  transform: translateY(-2px);
-}
-
-/* Trust-points styling */
-.trust-points {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: #666;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.trust-points div {
-  background: #f0f4f8;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-}
-
-/* SEO-copy styling */
-.seo-copy {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 2rem;
-  line-height: 1.6;
-}
-
-/* Hur det fungerar sektion */
-.how-it-works {
-  text-align: center;
-  margin: 3rem auto;
-  max-width: 1000px;
+/* Huvudinnehåll */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
-.how-it-works h3 {
+/* Formulärsektion */
+.lead-form-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  margin: -3rem auto 3rem;
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  color: var(--primary-color);
   font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #1c3f77;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.steps {
+.promo-banner {
+  background-color: #fff8e1;
+  border-left: 4px solid var(--secondary-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
 }
 
-@media(min-width: 768px) {
-  .steps {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  header h1 {
-    font-size: 3rem;
-  }
-  header p {
-    font-size: 1.3rem;
-  }
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(42, 92, 141, 0.2);
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  width: 100%;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Fördelssektion */
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.benefit-item {
+  background-color: #e8f4ff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* SEO-text */
+.seo-text {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Hur det fungerar */
+.how-it-works {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .step {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: left;
   flex: 1;
-  min-width: 200px;
+  min-width: 250px;
+  max-width: 350px;
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
 }
 
-.step h4 {
-  margin-bottom: 0.5rem;
-  color: #1c3f77;
+.step:hover {
+  transform: translateY(-5px);
 }
 
-/* Footer styling */
+.step-number {
+  background-color: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Footer */
 .footer {
+  background-color: var(--primary-dark);
+  color: var(--light-text);
+  padding: 2rem 1rem;
   text-align: center;
   margin-top: 3rem;
-  color: #999;
-  font-size: 0.9rem;
-  padding: 1rem;
 }
 
-/* Länkar */
-a {
-  color: #1c3f77;
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-link {
+  color: var(--light-text);
   text-decoration: none;
+  transition: var(--transition);
 }
 
-a:hover {
-  text-decoration: underline;
+.footer-link:hover {
+  color: var(--secondary-color);
 }
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Artikellänk */
+.articles-link {
+  display: block;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.articles-link:hover {
+  color: var(--primary-dark);
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .lead-form-section {
+    padding: 1.5rem;
+    margin: -2rem auto 2rem;
+  }
+  
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step {
+    width: 100%;
+  }
+}
+
+/* Animationer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lead-form-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.step {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.step:nth-child(1) { animation-delay: 0.1s; }
+.step:nth-child(2) { animation-delay: 0.3s; }
+.step:nth-child(3) { animation-delay: 0.5s; }
